@@ -30,17 +30,7 @@ module.exports = () => {
         console.log('Mongoose connected to DB Cluster [', dbName, ']');
     })
 
-    connection.on('error', (error) => {
-        console.error(error.message);
-    })
-
     connection.on('disconnected', () => {
         console.log('Mongoose Disconnected');
-    })
-    process.on('SIGINT', () => {
-        connection.close(() => {
-            console.log('Mongoose connection closed on Application Timeout');
-            process.exit(0);
-        })
     })
 }
