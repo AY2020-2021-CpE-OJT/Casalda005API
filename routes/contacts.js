@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Contacts = require('../models/Contacts');
-const verify = require('./verifyToken');
+const verify = require('./token');
 const {
     contactValidation
 } = require('../validation');
